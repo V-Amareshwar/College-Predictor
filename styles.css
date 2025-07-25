@@ -1,0 +1,194 @@
+
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- CSS Variables for Easy Customization --- */
+:root {
+    --primary-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    --background-color: #fafafa; /* Instagram-like light background */
+    --card-background: #ffffff;
+    --text-color: #262626;
+    --text-secondary-color: #8e8e8e;
+    --border-color: #dbdbdb;
+    --accent-color: #dc2743; /* A single color from the gradient for highlights */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+}
+
+/* --- General Body & Typography Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 2em 1em;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+    max-width: 800px;
+    margin: 2em auto;
+}
+
+h1, h2 {
+    font-weight: 700;
+}
+
+/* --- Header Section --- */
+header {
+    background: var(--primary-gradient);
+    color: white;
+    text-align: center;
+    padding: 2em 1em;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--shadow-color);
+    margin-bottom: 2.5em;
+}
+
+header h1 {
+    font-size: 2.5em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* --- Card Styles for Form and Results --- */
+#input-form, #results table {
+    background-color: var(--card-background);
+    padding: 2.5em;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+#results {
+    margin-top: 2.5em;
+}
+
+#input-form h2, #results h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-size: 1.8em;
+    color: var(--text-color);
+}
+
+/* --- Form Elements Styling --- */
+.form-group {
+    margin-bottom: 1.75em;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.75em;
+    font-weight: 600;
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 0.8em 1em;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(220, 39, 67, 0.15);
+}
+
+/* Hint text under preferred branches input */
+.form-group p {
+    font-size: 0.85em;
+    color: var(--text-secondary-color);
+    margin-top: 0.5em;
+}
+
+/* --- Submit Button --- */
+button[type="submit"] {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Results Table Styling --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden; /* Ensures border-radius is applied to the table */
+    border-radius: var(--border-radius);
+}
+
+th, td {
+    padding: 1em;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+thead th {
+    background: var(--primary-gradient);
+    color: white;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Status Indicators --- */
+#loading {
+    text-align: center;
+    padding: 2em;
+    font-weight: 500;
+    color: var(--text-secondary-color);
+}
+
+#error {
+    text-align: center;
+    padding: 1.5em;
+    background-color: rgba(220, 39, 67, 0.1);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    font-weight: 500;
+}
+```

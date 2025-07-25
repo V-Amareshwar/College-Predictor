@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telangana EAPCET College Prediction</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>🎓 Telangana EAPCET College Prediction System 🎓</h1>
+    </header>
+    <main>
+        <section id="input-form">
+            <h2>Enter Your Details</h2>
+            <form id="prediction-form">
+                <div class="form-group">
+                    <label for="rank">EAPCET Rank:</label>
+                    <input type="number" id="rank" name="rank" required min="1">
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="" disabled selected>Select Category</option>
+                        <option value="OC">OC</option>
+                        <option value="BC-A">BC-A</option>
+                        <option value="BC-B">BC-B</option>
+                        <option value="BC-C">BC-C</option>
+                        <option value="BC-D">BC-D</option>
+                        <option value="BC-E">BC-E</option>
+                        <option value="SC">SC</option>
+                        <option value="ST">ST</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="Boy">Boy</option>
+                        <option value="Girl">Girl</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="branches">Preferred Branches (comma-separated, e.g., CSE,ECE):</label>
+                    <input type="text" id="branches" name="branches" placeholder="CSE, ECE">
+                    <p>Popular branches: CSE, ECE, EEE, MEC, CIV, CHE, IT, CSM, CSD, CSC, ECM, AID</p>
+                </div>
+                <div class="form-group">
+                    <label for="num_predictions">Number of Predictions (default 10):</label>
+                    <input type="number" id="num_predictions" name="num_predictions" min="1" value="10">
+                </div>
+                <button type="submit">Predict Colleges</button>
+            </form>
+        </section>
+        <section id="results">
+            <h2>Prediction Results</h2>
+            <div id="loading" style="display: none;">Loading...</div>
+            <div id="error" style="color: red; display: none;"></div>
+            <table id="predictions-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>College Name</th>
+                        <th>Branch</th>
+                        <th>Predicted Closing Rank</th>
+                        <th>College Prestige</th>
+                    </tr>
+                </thead>
+                <tbody id="predictions-body"></tbody>
+            </table>
+        </section>
+    </main>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

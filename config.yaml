@@ -1,0 +1,19 @@
+
+data:
+  raw_dir: data/raw  # Directory containing raw data files (2019.xlsx, 2020.xlsx, etc.)
+  processed_dir: data/processed  # Directory for processed data
+  combined_data: data/processed/combined_data.csv  # Path to combined processed data
+  branch_mapping: data/processed/branch_mapping.csv  # Path to branch mapping
+  category_mapping: data/processed/category_mapping.csv  # Path to category mapping
+  gender_mapping: data/processed/gender_mapping.csv  # Path to gender mapping
+model:
+  type: random_forest
+  params:
+    n_estimators: 50  # Increased from 200
+    max_depth: 10      # Increased from 20
+    random_state: 42
+  path: models/random_forest_model.pkl  # Path to save trained model
+  features_path: models/random_forest_model_features.pkl  # Path to save feature info
+outputs:
+  predictions_dir: outputs/predictions  # Directory for prediction outputs
+  figures_dir: outputs/figures  # Directory for visualization outputs
